@@ -32,7 +32,7 @@ export default class TrackingCard {
 
             hrValueContainer.textContent = `${currCount}hrs`;
             prevHrValueContainer.textContent = `${prevCount}hrs`;
-        }, 10);
+        }, this.#mode === 'daily' ? 100 : this.#mode === 'weekly' ? 20 : 10);
     }
 
     render() {
