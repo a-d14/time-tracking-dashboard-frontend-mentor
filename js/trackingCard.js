@@ -3,6 +3,8 @@ export default class TrackingCard {
     #imgUrl;
     #mode;
 
+    #firstLoad = true;
+
     constructor(data, imgUrl, mode) {
         this.#data = data;
         this.#imgUrl = imgUrl;
@@ -16,23 +18,29 @@ export default class TrackingCard {
         const currentTargetValue = this.#data['timeframes'][this.#mode].current;
         const prevTargetValue = this.#data['timeframes'][this.#mode].previous;
 
+        const timeToUpdate = this.#mode === 'daily' ? 500 : this.#mode === 'weekly' ? 1000 : 1200;
+        const updateFrequency = Math.round(1000 / 60);
+
+        const rateOfUpdationForCurrentValue = (currentTargetValue / timeToUpdate) * updateFrequency;
+        const rateOfUpdationForPrevValue = (prevTargetValue / timeToUpdate) * updateFrequency;
+
         let currCount = 0, prevCount = 0;
         const interval = setInterval(() => {
             if(currCount < currentTargetValue) {
-                currCount++;
+                currCount += rateOfUpdationForCurrentValue;
             }
 
             if(prevCount < prevTargetValue) {
-                prevCount++;
+                prevCount += rateOfUpdationForPrevValue;
             }
 
             if (currCount >= currentTargetValue && prevCount >= prevTargetValue) {
                 clearInterval(interval);
             }
 
-            hrValueContainer.textContent = `${currCount}hrs`;
-            prevHrValueContainer.textContent = `${prevCount}hrs`;
-        }, this.#mode === 'daily' ? 100 : this.#mode === 'weekly' ? 20 : 10);
+            hrValueContainer.textContent = `${Math.round(currCount)}hrs`;
+            prevHrValueContainer.textContent = `${Math.round(prevCount)}hrs`;
+        }, updateFrequency);
     }
 
     render() {
