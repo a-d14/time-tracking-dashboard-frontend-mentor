@@ -1,0 +1,9 @@
+@use '../abstracts' as a;
+
+main {
+    width: 100%;
+    max-width: a.rem(1110);
+
+    display: grid;
+    gap: a.rem(24);
+}

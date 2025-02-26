@@ -1,0 +1,37 @@
+@use "../abstracts/functions" as f;
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+.text-preset-1 {
+    font-weight: 300;
+    font-size: clamp(f.rem(24), f.rem(16) + 2vw ,f.rem(40));
+    font-family: 'Rubik', serif;
+}
+
+.text-preset-2 {
+    font-weight: 300;
+    font-size: clamp(f.rem(32), f.rem(16) + 4vw , f.rem(56));
+    font-family: 'Rubik', sans-serif;
+}
+
+.text-preset-3 {
+    font: 400 f.rem(18)/1.5 'Rubik';
+}
+
+.text-preset-4 {
+    font: 400 f.rem(15)/1.5 'Rubik';
+}
+
+.text-preset-5 {
+    font: 500 f.rem(18)/1.5 'Rubik';
+}
