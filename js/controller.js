@@ -14,12 +14,13 @@ function loadTrackerData() {
 
     // trackerDataContainerView.render(filterData, true, [trackerDataContainerView.animateNumber]);
     trackerDataContainerView.render({data: filterData, mode: model.state.categorySelected});
+    userProfileView.render({data: model.state.userDetails, mode: model.state.categorySelected});
 }
 
 async function init() {
     model.loadUser();
     userProfileView.addHandlerSwitchTabs(clickHandler);
-    userProfileView.render(model.state.userDetails);
+    userProfileView.render({data: model.state.userDetails, mode: model.state.categorySelected});
 
     await model.loadData("data.json");
     loadTrackerData();

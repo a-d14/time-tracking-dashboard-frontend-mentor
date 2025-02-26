@@ -49,16 +49,16 @@ class UserProfileView extends View {
     _generateMarkup() {
         return `
             <section class='user-stats-component__user-profile__user'>
-                <img src=${this._data.userImgUrl} alt=${this._data.userName.toLowerCase()}>
+                <img src=${this._data.data.userImgUrl} alt=${this._data.data.userName.toLowerCase()}>
                 <div>
                     <span class='text-preset-4'>Report for</span>
-                    <h2 class='text-preset-1'>${this._data.userName}</h2>
+                    <h2 class='text-preset-1'>${this._data.data.userName}</h2>
                 </div>
             </section>
             <ul class='user-stats-component__user-profile__selector text-preset-3'>
-                <li>Daily</li>
-                <li>Weekly</li>
-                <li>Monthly</li>
+                <li class=${this._data.mode === 'daily' ? 'user-stats-component__user-profile__selector--active' : ''}>Daily</li>
+                <li class=${this._data.mode === 'weekly' ? 'user-stats-component__user-profile__selector--active' : ''}>Weekly</li>
+                <li class=${this._data.mode === 'monthly' ? 'user-stats-component__user-profile__selector--active' : ''}>Monthly</li>
             </ul>
         `;
     }

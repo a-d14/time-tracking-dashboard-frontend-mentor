@@ -37,7 +37,18 @@
 
     &__selector {
         padding: a.rem(24) a.rem(32);
+        color: a.$list-item-color;
+
         @include a.add-flex($justify-content: center, $gap: a.rem(24));
+
+        li:hover {
+            cursor: pointer;
+            color: white;
+        }
+
+        &--active {
+            color: white;
+        }
 
         @media all and (min-width: 1050px) {
             @include a.add-flex(column, $gap: a.rem(16));

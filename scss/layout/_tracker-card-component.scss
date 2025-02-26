@@ -1,0 +1,84 @@
+@use '../abstracts/' as a;
+
+.tracker-card {
+    border-radius: a.rem(15);
+    padding-top: a.rem(36);
+
+    @include a.add-flex(column);
+
+    // @media all and (min-width: 1050px) {
+    //     padding-top: a.rem(45);
+    // }
+
+    overflow: hidden;
+    position: relative;
+    z-index: -1;
+
+    &__category-image {
+        position: absolute;
+        top: -(a.rem(12));
+        right: a.rem(12);
+        // transform: scale(0.9);
+        z-index: 0;
+    }
+
+    &-work {
+        background-color: a.$work-background;
+    }
+
+    &-play {
+        background-color: a.$play-background;
+    }
+
+    &-study {
+        background-color: a.$study-background;
+    }
+
+    &-exercise {
+        background-color: a.$exercise-background;
+    }
+
+    &-social {
+        background-color: a.$social-background;
+    }
+
+    &-self-care {
+        background-color: a.$self-care-background;
+    }
+
+    &__body {
+
+        margin-top: auto;
+
+        position: relative;
+        z-index: 1;
+
+        width: 100%;
+
+        padding: a.rem(28) a.rem(24);
+        border-radius: a.rem(15);
+        @include a.add-flex(column, $gap: a.rem(6));
+
+        background-color: a.$card-background;
+
+        &:hover {
+            cursor: pointer;
+            background-color: lighten(a.$card-background, 10%);
+        }
+
+    }
+
+    &__body-header {
+        @include a.add-flex($justify-content: space-between, $align-items: center);
+    }
+
+    &__body-main {
+        // @include a.add-flex(column, )
+        @include a.add-flex(row, $justify-content: space-between, $align-items: center);
+
+        @media all and (min-width: 768px) {
+            @include a.add-flex(column);
+        }
+
+    }
+}

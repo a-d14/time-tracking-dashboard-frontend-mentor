@@ -1,4 +1,4 @@
-@use "../abstracts/functions" as f;
+@use "../abstracts/" as a;
 
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
@@ -14,24 +14,25 @@ h3, h4 {
 
 .text-preset-1 {
     font-weight: 300;
-    font-size: clamp(f.rem(24), f.rem(16) + 2vw ,f.rem(40));
+    font-size: clamp(a.rem(24), a.rem(16) + 2vw ,a.rem(40));
     font-family: 'Rubik', serif;
 }
 
 .text-preset-2 {
     font-weight: 300;
-    font-size: clamp(f.rem(32), f.rem(16) + 4vw , f.rem(56));
+    font-size: clamp(a.rem(32), a.rem(16) + 4vw , a.rem(56));
     font-family: 'Rubik', sans-serif;
 }
 
 .text-preset-3 {
-    font: 400 f.rem(18)/1.5 'Rubik';
+    font: 400 a.rem(18)/1.5 'Rubik';
 }
 
 .text-preset-4 {
-    font: 400 f.rem(15)/1.5 'Rubik';
+    font: 400 a.rem(15)/1.5 'Rubik';
+    color: a.$text-preset-4-color;
 }
 
 .text-preset-5 {
-    font: 500 f.rem(18)/1.5 'Rubik';
+    font: 500 a.rem(18)/1.5 'Rubik';
 }
