@@ -44,7 +44,7 @@ import View from "./View.js";
 
 class UserProfileView extends View {
     _data;
-    _parentElement = document.querySelector('.b');
+    _parentElement = document.querySelector('.user-stats-component__user-profile');
 
     _generateMarkup() {
         return `

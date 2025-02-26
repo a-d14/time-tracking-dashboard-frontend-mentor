@@ -5,7 +5,7 @@ import View from "./View.js";
 class TrackerDataContainerView extends View {
     _data;
     _mode;
-    _parentElement = document.querySelector('.c');
+    _parentElement = document.querySelector('.user-stats-component__stats-container');
     _visitedCategories = [];
 
     _generateMarkup(firstVisit = true) {
@@ -25,7 +25,7 @@ class TrackerDataContainerView extends View {
 
             const allTimes = this._data.map((d) => [d["timeframes"].current, d["timeframes"].previous]).flat();
             
-            addObserver(".c", ".tracker-card__time", (ele, idx) => {
+            addObserver(".user-stats-component__stats-container", ".tracker-card__time", (ele, idx) => {
                 animateNumber(ele, allTimes[idx]);
             });
 

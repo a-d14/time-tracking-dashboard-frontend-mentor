@@ -26,6 +26,7 @@ export const animateNumber = function(element, target) {
         }
 
         if (count >= target) {
+            count = target;
             clearInterval(interval);
         }
 
