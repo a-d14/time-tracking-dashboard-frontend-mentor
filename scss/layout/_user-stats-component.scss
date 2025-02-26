@@ -1,0 +1,45 @@
+@use '../abstracts' as a;
+
+.user-stats-component {
+    width: 100%;
+    max-width: a.rem(1110);
+
+    display: grid;
+    gap: a.rem(24);
+
+    &__stats-container {
+        display: grid;
+        gap: a.rem(24);
+    }
+
+    @media all and (min-width: 768px) {
+        
+        grid-template: repeat(3, auto) / repeat(3, 1fr);
+
+        &__user-profile {
+            grid-column: span 3;
+        }
+
+        &__stats-container {
+            grid-column: span 3;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+    }
+
+    @media all and (min-width: 1440px) {
+        
+        grid-template: repeat(2, auto) / 1fr 3fr;
+
+        &__user-profile {
+            grid-column: span 1;
+            grid-row: span 2;
+        }
+
+        &__stats-container {
+            grid-column: 2/-1;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+    }
+}
