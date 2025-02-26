@@ -7,7 +7,6 @@
     overflow: hidden;
  
     &__user {
-        // padding: a.rem(36) a.rem(32) a.rem(80);
         padding: a.rem(36) a.rem(32);
         background-color: a.$profile-background;
         border-radius: a.rem(15);
@@ -24,15 +23,6 @@
         @media all and (min-width: 1050px) {
             @include a.add-flex(column, $gap: a.rem(42));
         }
-
-        // @include a.add-flex(column, $gap: a.rem(42));
-
-        // img {
-        //     max-width: a.rem(78);
-        //     height: auto;
-        //     border: 3px solid white;
-        //     border-radius: 50%;
-        // }
     }
 
     &__selector {

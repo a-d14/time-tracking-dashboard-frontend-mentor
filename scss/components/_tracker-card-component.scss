@@ -3,7 +3,6 @@
 .tracker-card {
     border-radius: a.rem(15);
     padding-top: a.rem(36);
-    // margin: 0 -2px -2px;
 
     @include a.add-flex(column, flex-end);
 
@@ -15,37 +14,30 @@
         position: absolute;
         top: -(a.rem(12));
         right: a.rem(12);
-        // transform: scale(0.9);
         z-index: 0;
     }
 
     &-work {
-        // background-color: a.$work-background;
         background: linear-gradient(a.$work-background 0%, a.$work-background a.rem(50), transparent a.rem(50), transparent 100%);
     }
 
     &-play {
-        // background-color: a.$play-background;
         background: linear-gradient(a.$play-background 0%, a.$play-background a.rem(50), transparent a.rem(50), transparent 100%);
     }
 
     &-study {
-        // background-color: a.$study-background;
         background: linear-gradient(a.$study-background 0%, a.$study-background a.rem(50), transparent a.rem(50), transparent 100%);
     }
 
     &-exercise {
-        // background-color: a.$exercise-background;
         background: linear-gradient(a.$exercise-background 0%, a.$exercise-background a.rem(50), transparent a.rem(50), transparent 100%);
     }
 
     &-social {
-        // background-color: a.$social-background;
         background: linear-gradient(a.$social-background 0%, a.$social-background a.rem(50), transparent a.rem(50), transparent 100%);
     }
 
     &-self-care {
-        // background-color: a.$self-care-background;
         background: linear-gradient(a.$self-care-background 0%, a.$self-care-background a.rem(50), transparent a.rem(50), transparent 100%);
     }
 
@@ -74,7 +66,6 @@
     }
 
     &__body-main {
-        // @include a.add-flex(column, )
         @include a.add-flex(row, $justify-content: space-between, $align-items: center);
 
         @media all and (min-width: 768px) {

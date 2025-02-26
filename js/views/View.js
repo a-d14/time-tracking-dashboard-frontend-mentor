@@ -1,5 +1,3 @@
-// import addObserver from "../helpers.js";
-
 export default class View {
 
     _clear() {

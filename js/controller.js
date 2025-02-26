@@ -12,7 +12,6 @@ function loadTrackerData() {
        return {...data, "timeframes": data["timeframes"][model.state.categorySelected], "imgUrl": model.state.imgUrls[idx]}
     });
 
-    // trackerDataContainerView.render(filterData, true, [trackerDataContainerView.animateNumber]);
     trackerDataContainerView.render({data: filterData, mode: model.state.categorySelected});
     userProfileView.render({data: model.state.userDetails, mode: model.state.categorySelected});
 }
