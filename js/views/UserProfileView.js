@@ -48,14 +48,14 @@ class UserProfileView extends View {
 
     _generateMarkup() {
         return `
-            <section>
+            <section class='user-stats-component__user-profile__user'>
                 <img src=${this._data.userImgUrl} alt=${this._data.userName.toLowerCase()}>
                 <div>
-                    <span>Report for</span>
-                    <h2>${this._data.userName}</h2>
+                    <span class='text-preset-4'>Report for</span>
+                    <h2 class='text-preset-1'>${this._data.userName}</h2>
                 </div>
             </section>
-            <ul class="selector">
+            <ul class='user-stats-component__user-profile__selector text-preset-3'>
                 <li>Daily</li>
                 <li>Weekly</li>
                 <li>Monthly</li>

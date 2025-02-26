@@ -9,12 +9,12 @@ class TrackerCardView extends View {
                 <img src=${this._data.data.imgUrl}>
                 <section class='tracker-card__body'>
                     <div class='tracker-card__body-header'>
-                        <span>${this._data.data.title}</span>
+                        <span class='text-preset-5'>${this._data.data.title}</span>
                         <img src='images/icon-ellipsis.svg'>
                     </div>
                     <div class='tracker-card__body-main'>
-                        <span class='tracker-card__time'>${this._data.firstVisit ? 0 : this._data.data['timeframes']['current']}hrs</span>
-                        <span>
+                        <span class='tracker-card__time text-preset-2'>${this._data.firstVisit ? 0 : this._data.data['timeframes']['current']}hrs</span>
+                        <span class='text-preset-4'>
                             ${this._data.mode === 'daily' ? 'Yesterday' : this._data.mode === 'weekly' ? 'Last Week' : 'Last Month'} - 
                             <span class='tracker-card__time'>${this._data.firstVisit ? 0 : this._data.data['timeframes'].previous}hrs<span>
                         </span>
